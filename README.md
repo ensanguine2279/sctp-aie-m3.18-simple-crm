@@ -1,0 +1,1 @@
+Completed Simple CRM application in [Lesson 3.17: Persistent Data Management and Robust API Design](https://github.com/su-ntu-sctp/ai-3.17-persistent-data-management-robust-api-design/blob/main/lesson.md)

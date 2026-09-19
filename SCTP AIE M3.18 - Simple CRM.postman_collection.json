@@ -1,0 +1,1928 @@
+{
+  "info": {
+    "_postman_id": "d2e6b200-4962-49fb-a471-d1076a838f9b",
+    "name": "SCTP AIE M3.18 - Simple CRM",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "13967603"
+  },
+  "item": [
+    {
+      "name": "Get customer by id",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/:id",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:16:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Banner\",\n    \"email\": null,\n    \"contactNo\": null,\n    \"jobTitle\": null,\n    \"yearOfBirth\": 0\n}"
+        },
+        {
+          "name": "200 - Ok - Customer with interactions",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 13:00:16 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"firstName\": \"Bruce\",\n    \"lastName\": \"Banner\",\n    \"email\": null,\n    \"contactNo\": null,\n    \"jobTitle\": null,\n    \"yearOfBirth\": 0,\n    \"interactions\": [\n        {\n            \"id\": 1,\n            \"interactionDate\": \"2026-06-16\",\n            \"remarks\": \"Presented products to customer.\"\n        }\n    ]\n}"
+        },
+        {
+          "name": "400 - Invalid customer id",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "0"
+                }
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 03:06:14 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Invalid customer ID: 0\",\n    \"timestamp\": \"2026-09-19T11:06:14.169799769\"\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:20:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Could not find customer with id: 7\",\n    \"timestamp\": \"2026-09-16T20:20:40.874298035\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Get customers by first name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search?firstName=Bruce",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search"
+          ],
+          "query": [
+            {
+              "key": "firstName",
+              "value": "Bruce",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search?firstName=Bruce",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Bruce"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 11:48:12 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"firstName\": \"Bruce\",\n        \"lastName\": \"Banner\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "200 - Empty",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search?firstName=Alex",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Alex"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 11:48:50 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get customers with first name starting with",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/firstNameStartingWith?firstName=stephen",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "firstNameStartingWith"
+          ],
+          "query": [
+            {
+              "key": "firstName",
+              "value": "stephen"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/firstNameStartingWith?firstName=St",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "firstNameStartingWith"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "St"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 11:57:34 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 4,\n        \"firstName\": \"Stephen\",\n        \"lastName\": \"Strange\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "Ok - Empty",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/firstNameStartingWith?firstName=Stu",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "firstNameStartingWith"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Stu"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 11:57:59 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get customers by first name and last name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/firstNameAndLastName?firstName&lastName",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "firstNameAndLastName"
+          ],
+          "query": [
+            {
+              "key": "firstName",
+              "value": null,
+              "type": "text"
+            },
+            {
+              "key": "lastName",
+              "value": null,
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/firstNameAndLastName?firstName=Tony&lastName=Stark",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "firstNameAndLastName"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Tony"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Stark"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:00:23 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "200 - Empty",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/firstNameAndLastName?firstName=Tony&lastName=Star",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "firstNameAndLastName"
+              ],
+              "query": [
+                {
+                  "key": "firstName",
+                  "value": "Tony"
+                },
+                {
+                  "key": "lastName",
+                  "value": "Star"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:00:43 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get customers by last name",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/lastName?lastName=Stark",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "lastName"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "Stark",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/lastName?lastName=Stark",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "lastName"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Stark",
+                  "type": "text"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 02:35:53 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": \"CEO\",\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "Get customers by last name",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/lastName?lastName=Stark",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "lastName"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Stark"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 02:42:29 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": \"CEO\",\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get customer with last name via JPQL",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/lastName/jpql?lastName=Stark",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "lastName",
+            "jpql"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "Stark"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/lastName/jpql?lastName=Stark",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "lastName",
+                "jpql"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Stark"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 02:43:27 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": \"CEO\",\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Get customers with last name containing",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/lastNameContaining?lastName=Banner",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "lastNameContaining"
+          ],
+          "query": [
+            {
+              "key": "lastName",
+              "value": "Banner",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/lastNameContaining?lastName=Ba",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "lastNameContaining"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Ba"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:02:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 2,\n        \"firstName\": \"Bruce\",\n        \"lastName\": \"Banner\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "200 - Empty",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/lastNameContaining?lastName=Bat",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "lastNameContaining"
+              ],
+              "query": [
+                {
+                  "key": "lastName",
+                  "value": "Bat"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:02:51 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get customers by job title",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/search/job?jobTitle=CEO",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            "search",
+            "job"
+          ],
+          "query": [
+            {
+              "key": "jobTitle",
+              "value": "CEO",
+              "type": "text"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/job?jobTitle=CEO",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "job"
+              ],
+              "query": [
+                {
+                  "key": "jobTitle",
+                  "value": "CEO"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:09:55 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": \"CEO\",\n        \"yearOfBirth\": 0,\n        \"interactions\": []\n    }\n]"
+        },
+        {
+          "name": "200 - Empty",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/search/job?jobTitle=CTO",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                "search",
+                "job"
+              ],
+              "query": [
+                {
+                  "key": "jobTitle",
+                  "value": "CTO"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:10:56 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[]"
+        }
+      ]
+    },
+    {
+      "name": "Get all customers",
+      "request": {
+        "method": "GET",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "GET",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:16:02 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "[\n    {\n        \"id\": 1,\n        \"firstName\": \"Tony\",\n        \"lastName\": \"Stark\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0\n    },\n    {\n        \"id\": 2,\n        \"firstName\": \"Bruce\",\n        \"lastName\": \"Banner\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0\n    },\n    {\n        \"id\": 3,\n        \"firstName\": \"Peter\",\n        \"lastName\": \"Parker\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0\n    },\n    {\n        \"id\": 4,\n        \"firstName\": \"Stephen\",\n        \"lastName\": \"Strange\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0\n    }\n]"
+        }
+      ]
+    },
+    {
+      "name": "Create customer",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"firstName\": \"Tony\",\r\n    \"lastName\": \"Stark\",\r\n    \"email\": \"tony@avengers.com\",\r\n    \"contactNo\": \"77222299\",\r\n    \"jobTitle\": \"Tech Genius\",\r\n    \"yearOfBirth\": \"1978\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/customers",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers"
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Tony\",\r\n  \"lastName\": \"Stark\",\r\n  \"email\": \"tony@avengers.com\",\r\n  \"contactNo\": \"77229922\",\r\n  \"jobTitle\": \"Tech Genius\",\r\n  \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:30:51 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 5,\n    \"firstName\": \"Tony\",\n    \"lastName\": \"Stark\",\n    \"email\": \"tony@avengers.com\",\n    \"contactNo\": \"77229922\",\n    \"jobTitle\": \"Tech Genius\",\n    \"yearOfBirth\": 1978\n}"
+        },
+        {
+          "name": "400- Empty first name",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": null,\r\n  \"lastName\": \"Stark\",\r\n  \"email\": \"tony@avengers.com\",\r\n  \"contactNo\": \"77229922\",\r\n  \"jobTitle\": \"Tech Genius\",\r\n  \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:35:03 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"First name is mandatory. \",\n    \"timestamp\": \"2026-09-16T20:35:03.685942008\"\n}"
+        },
+        {
+          "name": "400 - Invalid email",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Tony\",\r\n  \"lastName\": \"Stark\",\r\n  \"email\": \"tonyavengers.com\",\r\n  \"contactNo\": \"77229922\",\r\n  \"jobTitle\": \"Tech Genius\",\r\n  \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:35:53 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Email should be valid. \",\n    \"timestamp\": \"2026-09-16T20:35:53.47526357\"\n}"
+        },
+        {
+          "name": "400 - Job title invalid size",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Tony\",\r\n  \"lastName\": \"Stark\",\r\n  \"email\": \"tony@avengers.com\",\r\n  \"contactNo\": \"772299\",\r\n  \"jobTitle\": \"\",\r\n  \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:41:05 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Job title must be between 2 and 50 characters long. Contact number must be exactly 8 characters long. \",\n    \"timestamp\": \"2026-09-16T20:41:05.404731699\"\n}"
+        },
+        {
+          "name": "400 - Invalid contact number",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"firstName\": \"Tony\",\r\n  \"lastName\": \"Stark\",\r\n  \"email\": \"tony@avengers.com\",\r\n  \"contactNo\": \"7722abcd\",\r\n  \"jobTitle\": \"Tech Genius\",\r\n  \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 02:50:16 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Contact number must be exactly 8 digits long. \",\n    \"timestamp\": \"2026-09-19T10:50:16.87248157\"\n}"
+        },
+        {
+          "name": "400 - Invalid customer id",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 0,\r\n    \"firstName\": \"Tony\",\r\n    \"lastName\": \"Stark\",\r\n    \"email\": \"tony@avengers.com\",\r\n    \"contactNo\": \"77229922\",\r\n    \"jobTitle\": \"Tech Genius\",\r\n    \"yearOfBirth\": \"1978\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers"
+              ]
+            }
+          },
+          "status": "Bad Request",
+          "code": 400,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Sat, 19 Sep 2026 03:00:26 GMT"
+            },
+            {
+              "key": "Connection",
+              "value": "close"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Customer ID must be positive. \",\n    \"timestamp\": \"2026-09-19T11:00:26.914983537\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Update customer",
+      "request": {
+        "method": "PUT",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"id\": 2,\r\n    \"firstName\": \"Black\",\r\n    \"lastName\": \"Widow\",\r\n    \"email\": \"blkwidow@avengers.com\",\r\n    \"contactNo\": \"72729977\",\r\n    \"jobTitle\": \"HR Manager\",\r\n    \"yearOfBirth\": 1997\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/customers/:id",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "7"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "200 - Ok",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 2,\r\n    \"firstName\": \"Black\",\r\n    \"lastName\": \"Widow\",\r\n    \"email\": \"blkwidow@avengers.com\",\r\n    \"contactNo\": \"72729977\",\r\n    \"jobTitle\": \"HR Manager\",\r\n    \"yearOfBirth\": 1997\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "OK",
+          "code": 200,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:33:11 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"id\": 2,\n    \"firstName\": \"Black\",\n    \"lastName\": \"Widow\",\n    \"email\": \"blkwidow@avengers.com\",\n    \"contactNo\": \"72729977\",\n    \"jobTitle\": \"HR Manager\",\n    \"yearOfBirth\": 1997\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "PUT",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n    \"id\": 2,\r\n    \"firstName\": \"Black\",\r\n    \"lastName\": \"Widow\",\r\n    \"email\": \"blkwidow@avengers.com\",\r\n    \"contactNo\": \"72729977\",\r\n    \"jobTitle\": \"HR Manager\",\r\n    \"yearOfBirth\": 1997\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:21:35 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Could not find customer with id: 7\",\n    \"timestamp\": \"2026-09-16T20:21:35.388644985\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Delete customer by id",
+      "request": {
+        "method": "DELETE",
+        "header": [],
+        "url": {
+          "raw": "{{url}}/customers/:id",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            ":id"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "204 - No Content",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "No Content",
+          "code": 204,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:34:40 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": null
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "DELETE",
+            "header": [],
+            "url": {
+              "raw": "{{url}}/customers/:id",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:22:01 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Could not find customer with id: 7\",\n    \"timestamp\": \"2026-09-16T20:22:01.764010177\"\n}"
+        }
+      ]
+    },
+    {
+      "name": "Create interaction",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n  \"remarks\": \"Presented products to customer.\",\r\n  \"interactionDate\": \"2026-06-16\"\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "{{url}}/customers/:id/interactions",
+          "host": [
+            "{{url}}"
+          ],
+          "path": [
+            "customers",
+            ":id",
+            "interactions"
+          ],
+          "variable": [
+            {
+              "key": "id",
+              "value": "2"
+            }
+          ]
+        }
+      },
+      "response": [
+        {
+          "name": "201 - Created",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"remarks\": \"Presented products to customer.\",\r\n  \"interactionDate\": \"2026-06-16\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/:id/interactions",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id",
+                "interactions"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "2"
+                }
+              ]
+            }
+          },
+          "status": "Created",
+          "code": 201,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Mon, 14 Sep 2026 12:55:26 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"customer\": {\n        \"id\": 2,\n        \"firstName\": \"Bruce\",\n        \"lastName\": \"Banner\",\n        \"email\": null,\n        \"contactNo\": null,\n        \"jobTitle\": null,\n        \"yearOfBirth\": 0\n    },\n    \"id\": 1,\n    \"interactionDate\": \"2026-06-16\",\n    \"remarks\": \"Presented products to customer.\"\n}"
+        },
+        {
+          "name": "404 - Not Found",
+          "originalRequest": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\r\n  \"remarks\": \"Presented products to customer.\",\r\n  \"interactionDate\": \"2026-06-16\"\r\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "{{url}}/customers/:id/interactions",
+              "host": [
+                "{{url}}"
+              ],
+              "path": [
+                "customers",
+                ":id",
+                "interactions"
+              ],
+              "variable": [
+                {
+                  "key": "id",
+                  "value": "7"
+                }
+              ]
+            }
+          },
+          "status": "Not Found",
+          "code": 404,
+          "_postman_previewlanguage": null,
+          "header": [
+            {
+              "key": "Content-Type",
+              "value": "application/json"
+            },
+            {
+              "key": "Transfer-Encoding",
+              "value": "chunked"
+            },
+            {
+              "key": "Date",
+              "value": "Wed, 16 Sep 2026 12:22:39 GMT"
+            },
+            {
+              "key": "Keep-Alive",
+              "value": "timeout=60"
+            },
+            {
+              "key": "Connection",
+              "value": "keep-alive"
+            }
+          ],
+          "cookie": [],
+          "body": "{\n    \"message\": \"Could not find customer with id: 7\",\n    \"timestamp\": \"2026-09-16T20:22:39.869045625\"\n}"
+        }
+      ]
+    }
+  ],
+  "event": [
+    {
+      "listen": "prerequest",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    },
+    {
+      "listen": "test",
+      "script": {
+        "type": "text/javascript",
+        "packages": {},
+        "requests": {},
+        "exec": [
+          ""
+        ]
+      }
+    }
+  ],
+  "variable": [
+    {
+      "key": "url",
+      "value": ""
+    }
+  ]
+}
