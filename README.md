@@ -1,1 +1,1 @@
-Completed Simple CRM application in [Lesson 3.17: Persistent Data Management and Robust API Design](https://github.com/su-ntu-sctp/ai-3.17-persistent-data-management-robust-api-design/blob/main/lesson.md)
+Completed Simple CRM application in coaching [activity](Saturday_Coaching_3.18_Activity.md) of [Lesson 3.18: Spring AI Part 3 — Retrieval Augmented Generation (RAG)](https://github.com/su-ntu-sctp/ai-3.18-spring-ai-part-3/blob/main/lesson.md)
